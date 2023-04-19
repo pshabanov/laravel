@@ -12,13 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::middleware('r')->group(function(){
-    Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('home');
+Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('home');
 
-    Route::post('/contact_form', [\App\Http\Controllers\IndexController::class, 'index'])->name('contact_form');
-});
-
-
-Route::prefix('news')->middleware('r')->group(function(){
-    Route::get('{id}', [\App\Http\Controllers\IndexController::class, 'index'])->name('home');
-});
+Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'detail'])->name('posts.detail');
