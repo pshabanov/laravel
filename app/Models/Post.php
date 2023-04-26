@@ -16,7 +16,7 @@ class Post extends Model
       'thumbnail'
     ];
     public function comments(){
-        $this->hasMany(Comment::class)->orderBy('created_at');
+        return $this->hasMany(Comment::class)->orderBy('created_at');
     }
 
     // Все поля обязательные

@@ -20,6 +20,8 @@ Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'detail'
 
 Route::middleware('auth')->group(function (){
     Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+
+    Route::post('posts/comment/{id}', [\App\Http\Controllers\PostController::class, 'comment'])->name('comment');
 });
 
 Route::middleware('guest')->group(function (){
@@ -30,5 +32,7 @@ Route::middleware('guest')->group(function (){
     Route::post('/register_process', [\App\Http\Controllers\AuthController::class, 'register'])->name('register_process');
 });
 
+Route::post('/contacts', [\App\Http\Controllers\IndexController::class, 'showContactForm'])->name('contacts');
+Route::post('/contact_form_process', [\App\Http\Controllers\IndexController::class, 'contactForm'])->name('contact_form_process');
 
 
