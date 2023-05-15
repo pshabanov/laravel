@@ -1,1 +1,1 @@
-<p>Email: {{ $formData['email'] }}</p>
+<p>Email: {{ $email }}</p>

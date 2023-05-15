@@ -47,7 +47,6 @@
                             <p style="width: 90%" class="text-gray-600 text-lg text-center md:text-left ">{{ $comment->text }}</p>
                         </div>
                         @endforeach
-                        <!--  comment end-->
                     </div>
                 </section>
 

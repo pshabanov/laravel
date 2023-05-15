@@ -14,14 +14,14 @@ class ContactForm extends Mailable
     use Queueable, SerializesModels;
 
 
-    protected $formData;
+    protected array $formData = [];
 
     /**
      * Create a new message instance.
      */
     public function __construct($formData)
     {
-        $this->$formData = $formData;
+        $this->formData = $formData;
     }
 
     /**
@@ -40,10 +40,10 @@ class ContactForm extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.contact_form',
             with: [
-                'email' => $this->formData->email,
-                'message'=> $this->formData->message
+                'email' => $this->formData['email'],
+                'message'=> $this->formData['message']
             ]
         );
     }
