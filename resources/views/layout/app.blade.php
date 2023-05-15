@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <title>@yield('title')</title>
 </head>
-<body>
+<body class="h-screen">
 
 @yield('content')
 <script src="/js/app.js"></script>
